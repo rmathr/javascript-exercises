@@ -1,9 +1,9 @@
 const getTheTitles = function(obj) {
-    const bookTitlesList = [];
-    const bookTitles = obj.map(book => {
-        bookTitlesList.push(book.title);
-    });
-    return bookTitlesList;
+    const titlesArr = [];
+    obj.map((item) => {
+        titlesArr.push(item.title);
+    })
+    return titlesArr;
 };
 
 // Do not edit below this line

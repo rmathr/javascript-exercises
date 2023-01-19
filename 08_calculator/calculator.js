@@ -1,66 +1,45 @@
-const add = function(x,y) {
-	if(typeof x != 'number' || typeof y != 'number'){
-    return "ERROR";
-  } else {
-    return x+y;
-  }
-};
+function add(x,y){
+  return x + y ;
+}
 
-const subtract = function(x,y) {
-	if(typeof x != 'number' || typeof y != 'number'){
-    return "ERROR";
-  } else {
+function subtract(x,y){
   return x - y;
 }
-};
 
-const sum = function(arr) {
-	if (!(Array.isArray(arr))){
-    return "ERROR";
-  } else {
-    const sumResult = arr.reduce((total, num) => {
-      return total + num;
-    }, 0);
-    return sumResult;
+function sum(arr){
+let arrSum = 0;
+  arr.forEach( elem => {
+    arrSum += elem; 
+  });
+  return arrSum;
+}
+
+function multiply(arr){
+  let arrMult = 1;
+  arr.forEach( elem => {
+    arrMult *= elem;
+  })
+  return arrMult;
+}
+
+function power(x,y){
+  let pow = 1;
+  for (let i = 1; i <= y; i++){
+    pow *= x;
   }
-};
+  return pow;
+}
 
-const multiply = function(arr) {
-  if (!(Array.isArray(arr))){
-    return "ERROR";
-  } else {
-    const multiplyResult = arr.reduce((total, num) => {
-      return total*num;
-    }, 1);
-    return multiplyResult;
-  }
-};
-
-const power = function(x,y) {
-	if(typeof x != 'number' || typeof y != 'number'){
-    return "ERROR";
-  } else {
-    let powerResult = x;
-    for (let i = 0; i < y-1; i++){
-      powerResult *= x;
-    }
-    return powerResult;
-  }
-};
-
-const factorial = function(x) {
-	if(typeof x != 'number' || x < 0){
-    return "ERROR";
-  } else if (x == 0 || x == 1) {
+function factorial(num){
+  if (num == 0 || num == 1){
     return 1;
-    } else {
-      let factorialResult = x;
-      for(let i = 1; i < x; i++){
-        factorialResult *= (x - i);
-      }
-      return factorialResult;
-    }
-};
+  }
+  let numFactorial = num;
+  for (let i = num - 1; i > 0; i--){
+    numFactorial *= i ; 
+  }
+  return numFactorial;
+}
 
 // Do not edit below this line
 module.exports = {

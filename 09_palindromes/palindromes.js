@@ -1,22 +1,11 @@
 const palindromes = function (string) {
-    let newString = string.match(/[^_\W]+/g).join('')
-         .toLowerCase();
-    const palindromeString = reverseString(newString);
-    if(palindromeString == newString){
-        return true;
-    } else {
-        return false;
+    let lowerString = string.replace(/[/\s+.,\/#!$%\^&\*;:{}=\-_`~()]/g, '').toLowerCase();
+    let chars = '';
+    for (let i = lowerString.length - 1; i >= 0 ; i--){
+        chars += lowerString[i];
     }
-};
-
-const reverseString = function(string) {
-    const reversedString = [];
-    for (i = 0; i<string.length; i++){
-        reversedString.unshift(string[i]);
-    }
-    return reversedString.join("");
-};
-
+    return chars === lowerString;
+}    
 
 // Do not edit below this line
 module.exports = palindromes;
